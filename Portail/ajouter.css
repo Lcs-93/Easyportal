@@ -1,0 +1,139 @@
+/* Réinitialisation des marges et des rembourrages */
+body, h2, form, input, label {
+    margin: 0;
+    padding: 0;
+}
+
+/* Styles pour le corps de la page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #efe7e5;
+    padding: 20px;
+}
+
+/* Styles pour le titre */
+h2 {
+    margin-bottom: 10px;
+    color: #080000;
+}
+
+/* Styles pour le formulaire d'ajout */
+.add-form {
+    position: absolute;
+    top: 50%;
+    left: 75%; /* Déplace le formulaire vers la moitié de droite */
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border: 1px solid #080000;
+    border-radius: 5px;
+    width: 400px;
+    background-color: #f5f5f5;
+}
+
+/* Styles pour les éléments du formulaire d'ajout d'utilisateur */
+.add-form label {
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.add-form input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+.add-form input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-form input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Styles pour le conteneur d'importation de fichier CSV */
+.import-container {
+    position: absolute;
+    top: 37%; /* Centre le conteneur verticalement */
+    left: 25%; /* Déplace le conteneur vers la moitié de gauche */
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 400px;
+    background-color: white;
+}
+
+/* Styles pour le titre d'importation de fichier CSV */
+.import-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Styles pour le formulaire d'importation de fichier CSV */
+.import-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Styles pour le champ de fichier d'importation de fichier CSV */
+.file-input {
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+/* Styles pour le bouton d'importation de fichier CSV */
+.import-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Styles pour le conteneur d'exportation de fichier CSV */
+.export-container {
+    position: absolute;
+    top: 66%; /* Centre le conteneur verticalement */
+    left: 25%; /* Déplace le conteneur vers la moitié de gauche */
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 400px;
+    background-color: white;
+}
+
+/* Styles pour le titre d'exportation de fichier CSV */
+.export-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Styles pour le formulaire d'exportation de fichier CSV */
+.export-form {
+    display: flex;
+    justify-content: center;
+}
+
+/* Styles pour le bouton d'exportation de fichier CSV */
+.export-button {
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
