@@ -1,6 +1,9 @@
 <?php
 session_start(); // Démarre la session
+
 $bdd= new PDO ("mysql:host=localhost;dbname=portail",'root',''); 
+// Connexion à la base de données MySQL
+
 // Vérifie si l'administrateur est connecté
 if(isset($_SESSION['pseudo'])) {
     // Récupère le nom de l'administrateur depuis la session
@@ -18,6 +21,7 @@ if(isset($_SESSION['pseudo'])) {
     <meta charset="UTF-8">
     <title>EASYPORTAL</title>
     <link rel="stylesheet" href="index.css"> <!-- Lien vers votre fichier CSS -->
+
     <style>
         /* Styles pour centrer le message de bienvenue */
         .welcome-message {
@@ -33,7 +37,8 @@ if(isset($_SESSION['pseudo'])) {
 </head>
 <body>
 
-<?php include 'header.php'; ?><!-- Inclure le header.php -->
+<?php include 'header.php'; ?>
+<!-- Inclure le header.php -->
 
 <!-- Le message de bienvenue sera affiché au centre de la page -->
 <div class="welcome-message">Bienvenue, <?php echo $admin_username; ?></div>

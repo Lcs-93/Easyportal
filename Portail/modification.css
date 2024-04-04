@@ -9,22 +9,20 @@ body {
     width: 100%; /* Largeur totale */
     height: 100%; /* Hauteur totale */
     font-family: Arial, sans-serif;
-    background-color: #efe7e5;/* Couleur de fond */
+    background-color: #efe7e5; /* Couleur de fond */
 }
 
 /* Conteneur principal */
 .container {
     position: absolute;
-    top: 100px; /* Ajuste la position verticale du conteneur */
+    top: 120px; /* Ajuste la position verticale du conteneur */
     left: 50%; /* Centre le conteneur horizontalement */
     transform: translateX(-50%); /* Centre le conteneur horizontalement */
     padding: 20px;
     border: 1px solid #1801019c;
     border-radius: 5px;
     width: 1200px;
-    background-color: white;
-    
-   
+    background-color: rgb(254, 254, 254);
 }
 
 /* Titre */
@@ -81,4 +79,3 @@ body {
 .container form input[type="submit"]:hover {
     background-color: #555; /* Couleur de fond au survol du bouton */
 }
-

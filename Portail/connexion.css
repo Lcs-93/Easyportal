@@ -1,52 +1,58 @@
+/* Styles pour le corps de la page */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #efe7e5;
-    margin: 0;
-    padding: 0;
+    font-family: Arial, sans-serif; /* Utilisation de la police Arial ou sans-serif */
+    background-color: #efe7e5; /* Couleur de fond */
+    margin: 0; /* Réinitialisation de la marge */
+    padding: 0; /* Réinitialisation du rembourrage */
 }
 
+/* Styles pour le conteneur principal */
 .container {
-    width: 300px;
-    margin: 100px auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px; /* Largeur du conteneur */
+    margin: 100px auto; /* Marge supérieure et inférieure de 100px, centrage horizontal */
+    background-color: #fff; /* Couleur de fond */
+    padding: 20px; /* Rembourrage intérieur */
+    border-radius: 5px; /* Coins arrondis */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombre */
 }
 
-    h2 {
-        text-align: center;
-        font-size: 20px; /* Ajustez la taille de la police selon vos besoins */
-    }
+/* Styles pour le titre */
+h2 {
+    text-align: center; /* Alignement du texte au centre */
+    font-size: 20px; /* Taille de la police */
+}
 
+/* Styles pour les champs de texte et les champs de mot de passe */
 input[type="text"],
 input[type="password"] {
-    width: 90%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 2px solid #ccc;
-    border-radius: 10px;
+    width: 90%; /* Largeur de 90% */
+    padding: 10px; /* Rembourrage intérieur */
+    margin: 10px 0; /* Marge externe en haut et en bas */
+    border: 2px solid #ccc; /* Bordure de 2px solide */
+    border-radius: 10px; /* Coins arrondis */
 }
 
+/* Styles pour le bouton de soumission */
 input[type="submit"] {
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    width: 100%; /* Largeur de 100% */
+    padding: 10px; /* Rembourrage intérieur */
+    margin-top: 10px; /* Marge externe en haut */
+    background-color: #007bff; /* Couleur de fond */
+    color: #fff; /* Couleur du texte */
+    border: none; /* Pas de bordure */
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer; /* Curseur pointeur */
 }
 
+/* Styles au survol du bouton de soumission */
 input[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: #0056b3; /* Changement de couleur de fond au survol */
 }
 
+/* Styles pour les messages d'erreur */
 .error {
-    color: red;
-    font-size: 14px;
-    text-align: center;
-    margin-top: 10px; /* Espace entre le formulaire et les messages d'erreur */
+    color: red; /* Couleur du texte en rouge */
+    font-size: 14px; /* Taille de la police */
+    text-align: center; /* Alignement du texte au centre */
+    margin-top: 10px; /* Marge externe en haut */
 }
-
