@@ -137,3 +137,9 @@ h2 {
     border-radius: 5px;
     cursor: pointer;
 }
+
+.import-button:active {
+    background-color: #010408; /* Nouvelle couleur de fond lors du clic */
+    transition: background-color 0.3s; /* Animation de transition */
+}
+

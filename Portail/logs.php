@@ -10,7 +10,8 @@ if (isset($_SESSION['pseudo'])) {
 }
 
 // Récupérer les données de la base de données
-$query = "SELECT *, DATE_FORMAT(heure_passage, '%H:%i:%s') AS heure_passage_format FROM logs";
+$query = "SELECT *, DATE_FORMAT(heure_passage, '%Y-%m-%d') AS date_passage, DATE_FORMAT(heure_passage, '%H:%i:%s') AS heure_passage FROM logs";
+
 $logs = $bdd->query($query)->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
@@ -34,17 +35,19 @@ $logs = $bdd->query($query)->fetchAll(PDO::FETCH_ASSOC);
             <th>Plaque d'immatriculation</th>
             <th>Accepter</th>
             <th>Refuser</th>
+            <th>Date de passage</th>
             <th>Heure de passage</th>
         </tr>
         <?php foreach ($logs as $log): ?>
             <tr>
-                <td><?php echo $log['nom']; ?></td>
-                <td><?php echo $log['prenom']; ?></td>
-                <td><?php echo $log['plaque_immatriculation']; ?></td>
-                <td><?php echo $log['accepter']; ?></td>
-                <td><?php echo $log['refuse']; ?></td>
-                <td><?php echo $log['heure_passage_format']; ?></td>
-            </tr>
+    <td><?php echo $log['nom']; ?></td>
+    <td><?php echo $log['prenom']; ?></td>
+    <td><?php echo $log['plaque_immatriculation']; ?></td>
+    <td><?php echo $log['accepter']; ?></td>
+    <td><?php echo $log['refuse']; ?></td>
+    <td><?php echo $log['date_passage']; ?></td>
+    <td><?php echo $log['heure_passage']; ?></td>
+</tr>
         <?php endforeach; ?>
     </table>
 </body>

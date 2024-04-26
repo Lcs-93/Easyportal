@@ -19,36 +19,42 @@ if(isset($_SESSION['pseudo'])) {
 $bdd = new PDO("mysql:host=localhost;dbname=portail", 'root', ''); // Connexion à la base de données MySQL
 
 if(isset($_POST['import'])){
-    if($_FILES['file']['name']){ // Vérifie si un fichier a été sélectionné
-        $filename = $_FILES['file']['tmp_name']; // Chemin temporaire du fichier uploadé
-        
-        $file = fopen($filename, "r"); // Ouvre le fichier en lecture
-        
-        // Parcourt le fichier ligne par ligne
-        while(($data = fgetcsv($file, 1000, ",")) !== FALSE){
-            // Récupère les données du fichier CSV
-            $nom = $data[0];
-            // Récupère le nom à partir de la première colonne des données du fichier CSV
-            
-            $prenom = $data[1];
-            // Récupère le prénom à partir de la deuxième colonne des données du fichier CSV
-            
-            $plaque_immatriculation = $data[2];
-            // Récupère la plaque d'immatriculation à partir de la troisième colonne des données du fichier CSV
-            
-            
-            // Requête d'insertion dans la table informations_personnelles
-            $sql = "INSERT INTO informations_personnelles (nom, prenom, plaque_immatriculation) VALUES ('$nom', '$prenom', '$plaque_immatriculation')";
-            
-            // Exécute la requête
-            $bdd->exec($sql);
-        }
-        
-        fclose($file); // Ferme le fichier
-        header("Location: ajouter.php");
+    if(empty($_FILES['file']['name'])) { // Vérifie si aucun fichier n'a été sélectionné
+        echo "<script>alert('Veuillez sélectionner un fichier.'); window.location.href='ajouter.php';</script>";
         exit();
     }
+
+    // Continuer le traitement si un fichier a été sélectionné
+    $filename = $_FILES['file']['tmp_name']; // Chemin temporaire du fichier uploadé
+
+    $file = fopen($filename, "r"); // Ouvre le fichier en lecture
+    
+    // Parcourt le fichier ligne par ligne
+    while(($data = fgetcsv($file, 1000, ",")) !== FALSE){
+        // Récupère les données du fichier CSV
+        $nom = $data[0];
+        // Récupère le nom à partir de la première colonne des données du fichier CSV
+        
+        $prenom = $data[1];
+        // Récupère le prénom à partir de la deuxième colonne des données du fichier CSV
+        
+        $plaque_immatriculation = $data[2];
+        // Récupère la plaque d'immatriculation à partir de la troisième colonne des données du fichier CSV
+        
+        
+        // Requête d'insertion dans la table informations_personnelles
+        $sql = "INSERT INTO informations_personnelles (nom, prenom, plaque_immatriculation) VALUES ('$nom', '$prenom', '$plaque_immatriculation')";
+        
+        // Exécute la requête
+        $bdd->exec($sql);
+    }
+    
+    fclose($file); // Ferme le fichier
+    header("Location: ajouter.php");
+    exit();
 }
+
+
 
 
 if(isset($_POST['export'])){
@@ -100,15 +106,15 @@ if(isset($_POST['export'])){
     <!-- Début du formulaire avec la méthode POST et l'action "ajouter.php" -->
     <label for="nom">Nom:</label><br>
     <!-- Champ de saisie pour le nom -->
-    <input type="text" id="nom" name="nom"><br>
+    <input type="text" id="nom" name="nom" placeholder="Nom"><br><br>
     <!-- Balise de saisie de type texte avec l'identifiant "nom" et le nom "nom" -->
     <label for="prenom">Prénom:</label><br>
     <!-- Champ de saisie pour le prénom -->
-    <input type="text" id="prenom" name="prenom"><br>
+    <input type="text" id="prenom" name="prenom" placeholder="Prénom"><br>
     <!-- Balise de saisie de type texte avec l'identifiant "prenom" et le nom "prenom" -->
     <label for="plaque_immatriculation">Plaque d'immatriculation:</label><br>
     <!-- Champ de saisie pour la plaque d'immatriculation -->
-    <input type="text" id="plaque_immatriculation" name="plaque_immatriculation"><br><br>
+    <input type="text" id="plaque_immatriculation" name="plaque_immatriculation" placeholder="XX-000-XX"><br><br>
     <!-- Balise de saisie de type texte avec l'identifiant "plaque_immatriculation" et le nom "plaque_immatriculation" -->
     <input type="submit" value="Ajouter">
     <!-- Bouton de soumission du formulaire -->
@@ -140,7 +146,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <div class="container import-container">
     <h2 class="import-title">Ajouter utilisateur via fichier csv</h2>
-    <form method="post" enctype="multipart/form-data" class="import-form">
+    <p>Exemple : </p>
+    <pre>
+        Case A1 : nom 
+        Case B1: Prénom 
+        Case C1 : Plaque d'immatriculation
+
+    </pre>
+    <form method="post" enctype="multipart/form-data" class="import-form" onsubmit="return validateForm()">
         <input type="file" name="file" accept=".csv" class="file-input">
         <input type="submit" name="import" value="Importer" class="import-button">
     </form>

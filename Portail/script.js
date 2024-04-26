@@ -1,8 +1,8 @@
 document.getElementById("sendMessageButton").addEventListener("click", function() {
     var message = "Ouvrir"; // Spécifiez le message que vous souhaitez envoyer
 
-    // Envoie du message au serveur Flask
-    fetch('http://192.168.0.94:8080/message', {
+    // Envoie du message au serveur Flask // raspberry ou PC
+    fetch('http://192.168.0.63:8080/message', {
         method: 'POST', // Utilisation de la méthode POST pour envoyer les données
         headers: {
             'Content-Type': 'application/json' // Définition du type de contenu à JSON
