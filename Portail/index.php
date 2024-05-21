@@ -22,18 +22,7 @@ if(isset($_SESSION['pseudo'])) {
     <title>EASYPORTAL</title>
     <link rel="stylesheet" href="index.css"> <!-- Lien vers votre fichier CSS -->
 
-    <style>
-        /* Styles pour centrer le message de bienvenue */
-        .welcome-message {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            font-size: 24px;
-            color: #333;
-        }
-    </style>
+    
 </head>
 <body>
 

@@ -1,54 +1,74 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+/* Appliquer une marge (espace extérieur) et un padding (espace intérieur) de 0 à tous les éléments, 
+   définir la boîte de taille (box-sizing) à border-box pour inclure le padding et les bordures dans la taille totale, 
+   et définir la police (font-family) à Arial */
+   * {
+    margin: 0; /* Espace extérieur de 0 */
+    padding: 0; /* Espace intérieur de 0 */
+    box-sizing: border-box; /* Inclure padding et bordures dans la taille totale */
+    font-family: Arial, sans-serif; /* Police Arial */
 }
 
+/* Assurer que la hauteur minimale (min-height) du body est la hauteur de la fenêtre (100vh) */
 body {
-    min-height: 100vh;
-
+    min-height: 100vh; /* Hauteur minimale de 100% de la hauteur de la fenêtre */
 }
 
+/* Définir la position fixe (position: fixed) pour l'en-tête (header), 
+   le positionner en haut (top: 0) et à gauche (left: 0) de l'écran, 
+   lui donner une largeur (width) de 100%, et appliquer un padding (espace intérieur) */
 .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px 100px;
-    background: grey;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 100;
+    position: fixed; /* Fixer la position à l'écran */
+    top: 0; /* Placer en haut */
+    left: 0; /* Placer à gauche */
+    width: 100%; /* Largeur de 100% de l'écran */
+    padding: 20px 100px; /* Espace intérieur de 20px en haut/bas, 100px à gauche/droite */
+    background: grey; /* Couleur de fond grise */
+    display: flex; /* Utiliser flexbox pour la mise en page */
+    justify-content: space-between; /* Espacer les éléments de manière égale */
+    align-items: center; /* Centrer les éléments verticalement */
+    z-index: 100; /* Assurer que l'en-tête est au-dessus des autres éléments */
 }
 
-.logo{
-    font-size: 32px;
-    color: white;
-    text-decoration: none;
-    font-weight: 700;
+/* Styliser le logo avec une taille de police (font-size), une couleur (color), 
+   retirer la décoration de texte (text-decoration), et définir le poids de la police (font-weight) */
+.logo {
+    font-size: 32px; /* Taille de la police de 32px */
+    color: white; /* Couleur blanche */
+    text-decoration: none; /* Pas de soulignement */
+    font-weight: 700; /* Police en gras */
 }
+
+/* Styliser les liens (a) de la barre de navigation (navbar), 
+   les positionner relativement (position: relative), définir la taille de la police (font-size), 
+   la couleur (color), le poids de la police (font-weight), retirer la décoration de texte (text-decoration), 
+   et appliquer une marge à gauche (margin-left) */
 .navbar a {
-position: relative;
-font-size: 18px;
-color: white;
-font-weight: 500;
-text-decoration: none;
-margin-left: 40px;
+    position: relative; /* Positionner relativement à son contenant */
+    font-size: 18px; /* Taille de la police de 18px */
+    color: white; /* Couleur blanche */
+    font-weight: 500; /* Police semi-gras */
+    text-decoration: none; /* Pas de soulignement */
+    margin-left: 40px; /* Marge à gauche de 40px */
 }
 
+/* Ajouter un pseudo-élément (::before) avant chaque lien (a) de la barre de navigation, 
+   définir la position absolue (position: absolute), le positionner en bas (top: 100%), 
+   initialement le rendre invisible avec une largeur (width) de 0, 
+   définir la hauteur (height) et la couleur de fond (background), 
+   et appliquer une transition (transition) pour l'effet */
 .navbar a::before {
-    content:'';
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: white;
-    transition: 0.3s;
-
+    content: ''; /* Pseudo-élément sans contenu textuel */
+    position: absolute; /* Positionner par rapport au lien */
+    top: 100%; /* Placer en bas du lien */
+    left: 0; /* Aligner à gauche */
+    width: 0; /* Largeur initiale de 0 */
+    height: 2px; /* Hauteur de 2px */
+    background: white; /* Couleur de fond blanche */
+    transition: 0.3s; /* Transition de 0.3 secondes */
 }
-.navbar a:hover::before{
-    width: 100%;
+
+/* Lors du survol (hover) d'un lien (a) de la barre de navigation, 
+   étendre la largeur (width) du pseudo-élément (::before) à 100% */
+.navbar a:hover::before {
+    width: 100%; /* Largeur étendue à 100% */
 }
